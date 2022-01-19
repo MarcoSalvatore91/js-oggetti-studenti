@@ -51,12 +51,12 @@ const allStudent = [];
 
 for (let i = 0; i < students.length; i++) {
     const current = students[i];
-    const nameSurname = `${current.name} ${current.surname} </br>`;
+    const nameSurname = `<strong>Nome</strong>: ${current.name} <strong>Cognome</strong>: ${current.surname} </br>`;
     allStudent.push(nameSurname)
 }
 
-firstStudent.innerHTML = `${student.name} </br> ${student.surname} </br> ${student.age}`;
-otherStudents.innerHTML = allStudent;
+const result = allStudent.join('')
+otherStudents.innerHTML = result;
 
 /* 5. Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere all’array creato in precedenza,
 un nuovo oggetto studente inserendo nell’ ordine: nome, cognome e età. */
@@ -70,5 +70,7 @@ sendForm.addEventListener('click', function(){
     }
     console.log(userAdd);
     students.push(userAdd); 
-    userInfo.innerHTML = `Nome: ${userName.value} </br>Cognome: ${userSurname.value} </br>Età: ${userAge.value}`;
+    userInfo.innerHTML = `<strong>Nome:</strong> ${userName.value} </br><strong>Cognome:</strong> ${userSurname.value} </br><strong>Età:</strong> ${userAge.value}`;
 })
+
+firstStudent.innerHTML = `${student.name} </br> ${student.surname} </br> ${student.age}`;
